@@ -43,14 +43,14 @@ class PaypalExpressCallbacksController < Spree::BaseController
         #maybe we should do something?
       end
 
-      PaypalTxn.create(:payment => @payment,
-                       :txn_type => txn_type,
-                       :amount => @notification.params["payment_gross"].to_f,
-                       :payment_status => @notification.params["payment_status"],
-                       :transaction_id => @notification.params["txn_id"],
-                       :transaction_type => @notification.params["txn_type"],
-                       :payment_type => @notification.params["payment_type"])
-
+      #PaypalTxn.create(:payment => @payment,
+      #                 :txn_type => txn_type,
+      #                 :amount => @notification.params["payment_gross"].to_f,
+      #                 :payment_status => @notification.params["payment_status"],
+      #                 :transaction_id => @notification.params["txn_id"],
+      #                 :transaction_type => @notification.params["txn_type"],
+      #                 :payment_type => @notification.params["payment_type"])
+      #
 
     end
 
