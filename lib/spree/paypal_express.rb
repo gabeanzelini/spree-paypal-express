@@ -216,9 +216,10 @@ module Spree::PaypalExpress
 
   def order_opts(order, payment_method, stage)
     items = order.line_items.map do |item|
+      description = (item.variant.product.description or '')[0..120]
       price = (item.price * 100).to_i # convert for gateway
       { :name        => item.variant.product.name,
-        :description => item.variant.product.description[0..120],
+        :description => description,
         :sku         => item.variant.sku,
         :qty         => item.quantity,
         :amount      => price,
